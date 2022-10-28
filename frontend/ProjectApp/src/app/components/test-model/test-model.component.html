@@ -1,0 +1,52 @@
+<div class="centeredText">
+    <h3 class="big-logo"> Upload Your Files </h3>
+    <h4 class="sub-logo">Here you can test your model, upload a database for others to test against, or both!</h4>
+</div>
+
+<div class="centeredForm" >
+    <form [formGroup]="testForm" (ngSubmit)="onSubmit()" (reset)="onClear()">
+        <div>
+            <label class="bufferedLabels" for="name">
+                Name:
+            </label>
+            <input id="name" type="text" formControlName="name">
+        </div>
+        <div>
+            <label class="bufferedLabels" for="gitURL">
+                GitURL:
+            </label>
+            <input id="gitURL" type="text" formControlName="gitURL">
+        </div>
+        <div>
+            <label class="bufferedLabels" for="databaseName">
+                Database Name:
+            </label>
+            <input id="databaseName" type="text" formControlName="databaseName">
+        </div>
+        <div>
+            <label class="bufferedLabels" for="modelFile">
+                Your Model:
+            </label>
+            <input  class="bufferChooseFile" id="modelFile" type="file" (change)="modelChange($event)" accept=".csv, .dat">
+        </div>
+
+        <div>
+            <label class="bufferedLabels" for="databaseFile">
+                Your Database:
+            </label>
+            <input class="bufferChooseFile" id="databaseFile" type="file" (change)="databaseChange($event)" accept=".csv, .dat">
+        </div>
+        <button class="button bufferedButtons" type="submit">Submit</button>
+        <button class="button" type="reset">Clear</button>
+    </form>
+
+</div>
+
+<div class="centeredText">
+    <p>Your Information:</p>
+    <p>{{this.outputString}}</p>
+    <p> Your Score: {{this.scoreString}}</p>
+</div>
+
+
+

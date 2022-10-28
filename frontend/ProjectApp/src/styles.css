@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+.centeredText {
+    text-align: center;
+}
+
+.about-section {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.highScoreList {
+    display: flex;
+    justify-content: center;
+}
+
+.borderedBox {
+    border: 10px solid gray;
+    padding: 50px;
+    margin: 20px;
+}
+
+.scoreList {
+    display: flex;
+    justify-content: center;
+}
+
+.bufferChooseFile {
+    padding: 2px;
+}
+
+.centeredForm {
+    border: 5px solid gray;
+    padding: 25px;
+    margin: 10px;
+}

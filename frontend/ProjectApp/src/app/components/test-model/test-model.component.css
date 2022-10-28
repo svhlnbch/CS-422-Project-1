@@ -1,0 +1,24 @@
+.centeredForm {
+    display: flex;
+    justify-content: center;
+}
+
+.bufferedLabels {
+    margin-right: 5%;
+}
+
+.bufferedButtons {
+    margin-right: 50%;
+}
+
+.file-input {
+    display: none;
+  }
+
+.big-logo {
+	font-size: 4.5em;
+}
+
+.sub-logo {
+	font-size: 2em;
+}
