@@ -1,14 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
-
-import { Collection, Frame } from '../frames/frame';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+import { Observable } from 'rxjs';
+import { saveAs } from 'file-saver';
 
 
 @Injectable({
@@ -28,18 +21,8 @@ export class FrameService {
 
   // return time series of specific name
   // note in docs about how no fuzzy search
-  getFrame(setName: string): Observable<any> {
-    const frameURL = '${this.apiURL}/user/${setName}';
-    return this.http.get<Frame>(frameURL);
-  }
-
-  // post time series to database
-  addFrame(frame: Frame) {
-    return this.http.post(this.apiURL + '/add', frame, httpOptions);
-  }
-
-  // post forceast time series to database
-  getScore(frame: Frame) {
-    return this.http.post(this.apiURL + '/score', frame, httpOptions);
+  getFrame(colName: string, fileName: string): Observable<any> {
+    console.log(this.apiURL + '/' + colName + '/' + fileName);
+    return this.http.get<any>(this.apiURL + '/' + colName + '/' + fileName)
   }
 }

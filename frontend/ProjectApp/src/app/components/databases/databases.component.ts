@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Collection, Frame } from 'src/app/frames/frame';
 import { FrameService } from 'src/app/services/frame.service';
 
+// Contributors: Cheyanne Kester, Scott Wallace
 @Component({
   selector: 'app-databases',
   templateUrl: './databases.component.html',
@@ -26,4 +27,8 @@ export class DatabasesComponent implements OnInit {
     this.frameService.getFrames().subscribe(db => this.db = db)
     this.frameService.getFrames().subscribe(db => console.log(db))
   } 
+
+  onClick(colName: string, fileName: string) {
+    this.frameService.getFrame(colName, fileName)
+  }
 }
